@@ -608,3 +608,50 @@ footer {
 
 
 
+
+
+/* Estilos generales para el video */
+.backgroundvideo video {
+  width: 90%;
+  height: 90%;
+  object-fit: cover; /* Cambia a "contain" si prefieres que no se corte */
+}
+
+/* Estilos del modal */
+.modalbox {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Para celulares (pantallas verticales) */
+@media (max-width: 768px) {
+  .modalbox {
+    width: 100%;
+    height: 100%;
+  }
+
+  .backgroundvideo video {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* En móvil mejor ver todo el video */
+  }
+}
+
+/* Para pantallas grandes (computador) */
+@media (min-width: 769px) {
+  .modalbox {
+    width: 350px;
+    height: 1280px;
+	margin-top: 2%;
+  }
+
+  .backgroundvideo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
