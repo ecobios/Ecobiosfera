@@ -80,14 +80,24 @@
             </div>
 
     
-
 <script>
-  // Esperamos a que cargue todo el DOM
   window.addEventListener("load", function() {
-    // Redirige el hash a #modal5 para abrir el modal
-    window.location.hash = "modal5";
+    // Detecta si está en la raíz del dominio (ej: ecobiosfera.org/)
+    if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+      
+      // Abre el modal automáticamente
+      window.location.hash = "modal5";
+
+      // Reproduce el video si existe
+      const video = document.querySelector("#modal5 video");
+      if (video) {
+        video.volume = true; // recomendado para autoplay
+        video.play().catch(err => console.log("Autoplay bloqueado:", err));
+      }
+    }
   });
 </script>
+
 	  
  <div class="backgroundvideo" category="backgroundvideo">
 				<video muted autoplay loop playsinline preload="none"> 
@@ -308,6 +318,7 @@ Durante todo el año, distribuimos contenedores especiales en hogares, aulas de 
    
   </body>
   </html>
+
 
 
 
